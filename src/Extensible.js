@@ -489,31 +489,6 @@ Extensible.applyOverrides = function() {
         });
     }
 
-    // Currently MemoryProxy really only functions for read-only data. Since we want
-    // to simulate CRUD transactions we have to at the very least allow them to be
-    // marked as completed and successful, otherwise they will never filter back to the
-    // UI components correctly.
-    if (Ext.data && Ext.data.proxy && Ext.data.proxy.Memory) {
-        Ext.data.proxy.Memory.override({
-            updateOperation: function(operation, callback, scope) {
-                Ext.each(operation.records, function(rec) {
-                    rec.commit();
-                });
-                operation.setCompleted();
-                operation.setSuccessful();
-                Ext.callback(callback, scope || this, [operation]);
-            },
-            create: function() {
-                this.updateOperation.apply(this, arguments);
-            },
-            update: function() {
-                this.updateOperation.apply(this, arguments);
-            },
-            destroy: function() {
-                this.updateOperation.apply(this, arguments);
-            }
-        });
-    }
 
     // In Ext 4.0.x, CheckboxGroup's resetOriginalValue uses a defer hack that was removed
     // in 4.1. Unfortunately that defer hack causes a runtime error in certain situations

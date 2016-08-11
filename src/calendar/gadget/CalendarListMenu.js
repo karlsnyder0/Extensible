@@ -61,14 +61,7 @@ Ext.define('Extensible.calendar.gadget.CalendarListMenu', {
      * The {@link Extensible.calendar.util.ColorPicker ColorPicker} instance for this CalendarListMenu
      */
     
-    initComponent: function() {
-        this.addEvents(
-            'showcalendar',
-            'hidecalendar',
-            'radiocalendar',
-            'colorchange'
-        );
-        
+    initComponent: function() {       
         Ext.apply(this, {
             plain: true,
             items: [{

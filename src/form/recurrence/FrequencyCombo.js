@@ -22,16 +22,7 @@ Ext.define('Extensible.form.recurrence.FrequencyCombo', {
     
     initComponent: function() {
         var me = this;
-        
-        /**
-         * @event frequencychange
-         * Fires when a frequency list item is selected.
-         * @param {Extensible.form.recurrence.Combo} combo This combo box
-         * @param {String} value The selected frequency value (one of the names
-         * from {@link #frequencyOptions}, e.g. 'DAILY')
-         */
-        me.addEvents('frequencychange');
-        
+                
         var freq = Extensible.form.recurrence.Parser.strings.frequency;
         
         /**

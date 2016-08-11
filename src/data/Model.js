@@ -49,11 +49,11 @@ Ext.define('Extensible.data.Model', {
                 }
             }
 
-            proto.fields.clear();
+            proto.fields = [];
             len = fields.length;
             
             for (; i < len; i++) {
-                proto.fields.add(Ext.create('Ext.data.Field', fields[i]));
+                proto.fields.push(Ext.create('Ext.data.Field', fields[i]));
             }
             return this;
         }

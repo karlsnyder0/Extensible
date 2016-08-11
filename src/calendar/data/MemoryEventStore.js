@@ -28,7 +28,7 @@ Ext.define('Extensible.calendar.data.MemoryEventStore', {
         type: 'memory',
         reader: {
             type: 'json',
-            root: 'evts'
+            rootProperty: 'evts'
         },
         writer: {
             type: 'json'
@@ -53,7 +53,7 @@ Ext.define('Extensible.calendar.data.MemoryEventStore', {
 
         this.idProperty = this.idProperty || Extensible.calendar.data.EventMappings.EventId.mapping || 'id';
 
-        this.fields = Extensible.calendar.data.EventModel.prototype.fields.getRange();
+        this.fields = Extensible.calendar.data.EventModel.prototype.fields.slice();
 
         // By default this shared example store will monitor its own CRUD events and
         // automatically show a page-level message for each event. This is simply a shortcut
