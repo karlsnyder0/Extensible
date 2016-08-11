@@ -1,9 +1,8 @@
 # Extensible
 
-**This project is no longer under active development.** See this [blog post](http://ext.ensible.com/blog/2016/06/end-of-the-line/) for additional information.
-
-If you are interested in becoming a committer or taking ownership of this repo open a PR and let me know.
-
+## Prato Services
+This is our fork to support Ext6 within our own app.
+We only intend to support or own features. 
 ---
 
 ## About
